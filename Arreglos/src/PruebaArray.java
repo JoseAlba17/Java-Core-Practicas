@@ -1,0 +1,59 @@
+//Título: Prueba Array
+//Fecha: 05/09/2019
+//Autor: José María Alba
+//Descripción: Uso de arrays unidimensionales 
+
+public class PruebaArray {
+
+	public static void main (String [] args) {
+		
+		//Declaración de variables
+		int i;
+		
+		//Declaración de vectores
+		//Son objetos, tienen métodos
+		//Dimensión: de 0 hasta TAMAÑO-1
+		int [] numeros = new int [5];
+		char [] letras = new char [10];
+		
+		//Asignación de valores a vectores
+		numeros[0] = 10;
+		numeros[1] = 9;
+		numeros[2] = 5;
+		numeros[3] = 2;
+		numeros[4] = 6;
+		
+		letras[0] = 'a';
+		letras[1] = 'b';
+		letras[2] = 'c';
+		letras[3] = 'd';
+		letras[4] = 'e';
+		letras[5] = 'f';
+		letras[6] = 'g';
+		letras[7] = 'h';
+		letras[8] = 'i';
+		letras[9] = 'j';
+		
+		//Acceder a valores a través del índice
+		for(i = 0; i < numeros.length; i++) {
+			
+			System.out.println("Valor en " + i + ": " + numeros[i]);
+		
+		}
+		
+		System.out.println("");
+		
+		//Acceder a letras a través del índice
+		for(i = 0; i < letras.length; i++) {
+			
+			//Se genera un caso excepcional de error para que cuando pase, el programa lo reciba y lo trate, sin que le programa truene
+			try {
+				System.out.println("Letra en " + i + ": " + letras[i]);
+			} catch (Exception error) {
+				System.out.println("Índice fuera de rango");
+				System.out.println(error.getMessage());
+			}
+				
+		} 
+	}
+}

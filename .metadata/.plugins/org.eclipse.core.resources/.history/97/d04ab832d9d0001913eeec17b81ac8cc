@@ -1,0 +1,88 @@
+//Título: PruebaMatriz
+//Fecha: 06/09/2019
+//Autor: José María Alba
+//Descripción: uso de arrays de más de una dimensión
+//Keywords: matrices
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class PruebaMatriz {
+
+	public static final int TAMAÑO = 8;
+	public static final int NUMERO_MONIGOTES = 12;
+	public static void main (String [] args) {
+		int [][] tabla = new int [TAMAÑO][TAMAÑO];
+		int fila = 0, columna = 0, monigotes = 0;
+		Scanner scanner = null;
+		String[] coordenadas = null;
+		
+		scanner = new Scanner(System.in);
+		
+		llenar (tabla);
+		System.out.println("= ENCONTRANDO POZOLES =");
+		
+		while(monigotes < NUMERO_MONIGOTES) {
+			
+			System.out.print("Ingresa una coordenada: ");
+			//Separa los valores introducidos y los guarda en un vector String
+			coordenadas = scanner.nextLine().split(",");
+			
+			//Convierte los valores del vector String a Int
+			fila = Integer.parseInt(coordenadas[0]);
+			columna = Integer.parseInt(coordenadas[1]);
+			
+			if (tabla[fila][columna] == 1) {
+				
+				System.out.println("Prepararlo");
+				tabla[fila][columna] = -1;
+				monigotes--;
+				
+			} else {
+				
+				System.out.println("Avanza más, gordito");
+				
+			}
+			
+		}
+		
+		scanner.close();
+	}
+ 	
+	public static void imprimir ( int [][] matriz) {
+		
+		Random random = new Random();
+		int num = 0;
+		int monigotes = 0;
+		
+		for (int i = 0; i < TAMAÑO; i++) {
+			
+			for (int j = 0; j < TAMAÑO; j++) {
+				
+				System.out.print(matriz[i][j] +" ");
+			}
+			
+			System.out.println();
+		}	
+		
+	}
+	
+	public static void llenar (int [][] matriz) {
+		
+		Random random = new Random();
+		int monigotes = 0, fila = 0, columna = 0;
+		
+		while(monigotes < NUMERO_MONIGOTES) {
+			
+			//random.nextInt(n) devuelve un valor tipo Int entre 0 y n-1
+			fila = random.nextInt(TAMAÑO);
+			columna = random.nextInt(TAMAÑO);
+			
+			if (matriz [fila][columna] != 1) {
+				
+				matriz [fila][columna] = 1;
+				monigotes++;
+			}
+		}
+	}
+}

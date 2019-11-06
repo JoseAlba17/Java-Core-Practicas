@@ -1,0 +1,16 @@
+import java.util.Date;
+
+public class Tarjeta {
+
+	private String nombre;
+	private String descripcion;
+	private Date fechaVencimiento;
+	private String [] miembros;
+	private 
+	
+	public enum Etiqueta {
+		
+	}
+	
+	
+}

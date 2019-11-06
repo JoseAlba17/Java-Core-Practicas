@@ -1,0 +1,37 @@
+//Título: Prueba Array 2
+//Fecha: 05/09/2019
+//Autor: José María Alba
+//Descripción: Uso de arrays unidimensionales 
+
+import java.util.Scanner;
+
+public class PruebaArray2 {
+
+	public static void main (String [] args) {
+		
+		int numeroPagos = 0;
+		int total = 0;
+		int [] cantidades;
+		Scanner scanner = null;
+		
+		scanner = new Scanner(System.in);
+		
+		System.out.print("¿Cuantos pagos? ");
+		numeroPagos = scanner.nextInt();
+		
+		cantidades = new int[numeroPagos];
+				
+		for (int i=0; i < numeroPagos; i++) {
+			
+			System.out.print("Introduzca pago " + (i+1) + ":");
+			cantidades[i] = scanner.nextInt();
+			total += cantidades[i];
+			System.out.println();
+		}
+		for (int i = 0; i < numeroPagos; i++) {
+			
+			System.out.println(cantidades[i]);
+		}
+		System.out.println("Total: " + total);
+	}
+}

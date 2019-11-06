@@ -1,0 +1,15 @@
+//Título: PruebaMatriz
+//Fecha: 06/09/2019
+//Autor: José María Alba
+//Descripción: uso de arrays de más de una dimensión
+//Keywords: matrices
+
+public class PruebaMatriz {
+
+	public static final int TAMAÑO = 8;
+	
+	public static void main (String [] args) {
+		int [][] tabla = new int [TAMAÑO][TAMAÑO];
+		int fila = 0, columna = 0;
+	}
+}

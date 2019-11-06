@@ -1,0 +1,46 @@
+//Título: PruebaMatriz
+//Fecha: 06/09/2019
+//Autor: José María Alba
+//Descripción: uso de arrays de más de una dimensión
+//Keywords: matrices
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class PruebaMatriz {
+
+	public static final int TAMAÑO = 8;
+	public static final int NUMERO_MONIGOTES = 12;
+	public static void main (String [] args) {
+		int [][] tabla = new int [TAMAÑO][TAMAÑO];
+		int fila = 0, columna = 0;
+		Scanner scanner = null;
+				
+	}
+	
+	public static void llenar ( int [][] matriz) {
+		
+		Random random = new Random();
+		int num = 0;
+		int monigotes = 0;
+		
+		for (int i = 0; i < TAMAÑO; i++) {
+			
+			for (int j = 0; j < TAMAÑO; j++) {
+				
+				//random.nextInt(n) devuelve un valor tipo Int entre 0 y n-1
+				num = random.nextInt(2); 
+				if (num == 1 && monigotes < NUMERO_MONIGOTES) {
+					
+					matriz [i][j] = num;
+					
+				} else {
+					
+					matriz [i][j] = 0;
+				}
+				System.out.print(" " + matriz + " ");
+			}
+		}
+		System.out.println();
+	}
+}

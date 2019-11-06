@@ -1,0 +1,105 @@
+import java.io.File;
+import java.util.Date;
+
+public class Ticket {
+
+	private String nombreCliente;
+	private String descripcionTicket;
+	private Date fechaEntrega;
+	private String[] responsables;
+	private String[] comentarios;
+	private File[] archivos;
+	private Etiqueta[] etiquetas;
+
+	public enum Etiqueta {
+		IMPORTANTE, ESPERA, COTIZACION, URGENTE, SERVICIO
+	}
+
+	public Ticket() {
+
+	}
+
+	public Ticket(String nombreCliente, String descripcionTicket, Date fechaEntrega, String[] responsables,
+			String[] comentarios, File[] archivos, Etiqueta[] etiquetas) {
+
+		this.nombreCliente = nombreCliente;
+		this.descripcionTicket = descripcionTicket;
+		this.fechaEntrega = fechaEntrega;
+		this.responsables = responsables;
+		this.comentarios = comentarios;
+		this.archivos = archivos;
+		this.etiquetas = etiquetas;
+	}
+
+	public Ticket(String nombreCliente, String descripcionTicket, Date fechaEntrega, Etiqueta[] etiquetas) {
+
+		this.nombreCliente = nombreCliente;
+		this.descripcionTicket = descripcionTicket;
+		this.fechaEntrega = fechaEntrega;
+		this.etiquetas = etiquetas;
+	}
+
+	// get y set NombreCliente//
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
+
+	// get y set DescripcionTicket//
+	public String getDescripcionTicket() {
+		return descripcionTicket;
+	}
+
+	public void setDescripcionTicket(String descripcionTicket) {
+		this.descripcionTicket = descripcionTicket;
+	}
+
+	// get y set FechaEntrega//
+	public Date getFechaEntrega() {
+		return fechaEntrega;
+	}
+
+	public void setFechaEntrega(Date fechaEntrega) {
+		this.fechaEntrega = fechaEntrega;
+	}
+
+	// get y set Responsables//
+	public String[] getResponsables() {
+		return responsables;
+	}
+
+	public void setResponsables(String[] responsables) {
+		this.responsables = responsables;
+	}
+
+	// get y set Comentarios//
+	public String[] getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(String[] comentarios) {
+		this.comentarios = comentarios;
+	}
+
+	// get y set Archivos//
+	public File[] getArchivos() {
+		return archivos;
+	}
+
+	public void setArchivos(File[] archivos) {
+		this.archivos = archivos;
+	}
+
+	// get y set Etiqueta//
+	public Etiqueta[] getEtiquetas() {
+		return etiquetas;
+	}
+
+	public void setEtiqueta(Etiqueta[] etiquetas) {
+		this.etiquetas = etiquetas;
+	}
+
+}
